@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Nuevo Cliente</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="register-page">
+  <div class="register">
+    <h1><strong>NUEVO CLIENTE</strong></h1>
+      <center><form name="cliente" action="<?php echo base_url();?>principal/registro" method="post">
+      <h3>Cuenta</h3>
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="text" name="correo" placeholder="Cuenta">
+            <input type="password" name="contrasena" placeholder="Contrasena">
+            <input type="text" name="rfc" placeholder="RFC">
+            <input type="text" name="edad" placeholder="Edad">
+            <input type="file"  name="file">
+            <!--<button>Crear cuenta</button>-->
+      </form>
+      <form name="solicitud" action="<?php echo base_url();?>principal/registro" method="post">
+      <h3>Solicitud</h3>
+            <select name="probabilidad">
+              <option value="muybaja">Muy baja</option>
+              <option value="baja">Baja</option>
+              <option value="media">Media</option>
+              <option value="alta">Alta</option>
+              <option value="seguro">Seguro</option>
+            </select>
+            <select name="estado">
+              <option value="prospecto">Prospecto</option>
+              <option value="cotizacion">Cotización del vehículo</option>
+              <option value="resolucion">Esperando resolución de crédito</option>
+              <option value="aprobado">Aprobado</option>
+              <option value="vendido">Vendido</option>
+              <option value="entregado">Entregado</option>
+              <option value="postventa">Postventa</option>              
+            </select>
+            <label>Vehículo</label>
+            <input type="text" name="marca" placeholder="Marca">
+            <input type="text" name="modelo" placeholder="Modelo">
+            <input type="text" name="ano" placeholder="Año">
+            <input type="text" name="costo" placeholder="Costo">
+    </form>
+    <input type="submit" onclick="submitForms()"/>
+  </center>
+  </div>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script> 
+    submitForms = function(){
+      document.forms["form1"].submit();
+      document.forms["form2"].submit();
+    } 
+    </script>
+  </body>
+</html>
